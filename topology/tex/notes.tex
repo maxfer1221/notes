@@ -145,9 +145,11 @@ $(\mathbf{X},\tau_p)$ conn.$\iff(\mathbf{X}_j,\tau_j)$ is conn.$\forall j$
 \emph{Open cover of A}:
 $A\subseteq\cup\mathbf{e}$\\
 \emph{Compact}:
-Every open cover has finite subcover. $\mathbf{e}\subseteq\mathbf{X}$ and $A\subseteq\cup\mathbf{e},\implies\exists V\subseteq\mathbf{e}:A\subseteq\cup V \land$\\
+Every open cover has finite subcover. $\mathbf{e}\subseteq\mathbf{X}$ and $A\subseteq\cup\mathbf{e},\implies\exists V\subseteq\mathbf{e}:A\subseteq\cup V \land |V|<\infty$\\
 \emph{Neighborhood of $x$}: $B\subseteq\mathbf{X}:x\in V\subseteq B,\exists V\in\tau$\\
-\emph{Locally compact}: $\forall x\in\mathbf{X}$, x has a compact neighborhood.
+\emph{Locally compact}: $\forall x\in\mathbf{X}$, x has a compact neighborhood.\\
+\emph{Compactification} ($((\mathbf{Y},\sigma), f)$): i) $(\mathbf{Y},\sigma)$ comp. ii) $f:(\mathbf{X},\tau)\mapsto(\mathbf{Y},\sigma)$ is an into homeomorphism iii) $\overline{f(\mathbf{X})}=\mathbf{Y}$\\
+\emph{One-point compactification}: above, and $Y-f(\mathbf{X})$ is a singleton
 \\\underline{\emph{Theorems \& Lemmas}}\\
 Let $(\mathbf{X},\tau)\in$|TOP|: \\
 i) if $\mathbf{X}$ compact, so is each closed subset\\
@@ -166,12 +168,9 @@ Let $(\mathbf{X},\tau)$ be Hausdorff. Let compacts subsets $A,B\subseteq\mathbf{
 i) if $x\notin A,\exists V_1,V_2\in\tau:x\in V_1,A\subseteq V_2,V_1\cap V_2=\emptyset$\\
 ii) $\exists V_1,V_2\in\tau:A\subseteq V_1,B\subseteq V_2, V_1\cap V_2=\emptyset \square$\\
 Let $(\mathbf{X},\tau)$ be loc. comp. and Hausdorff. $x\in V\in\tau\implies\exists W\in\tau:x\in W\subseteq\overline{W}\subseteq V, \overline{W}$ compact $\square$
+Assume $(\mathbf{X},\tau)$ is Hausdorff. Then it has a Hausdorff one-point compactif. iff $(\mathbf{X},\tau)$ is locally compact. Assume $(\mathbf{X},\tau)$ is not compact $\square$
 \\\underline{\emph{Remarks}}\\
 If $\mathbf{e}$ is a $\tau$-open cover of A, then $\mathcal{D}=\{V\cap A:V\in\mathbf{e}\}$ is a $\tau_A$-open cover of A
-\emph{Compactification} ($((\mathbf{Y},\sigma), f)$): i) $(\mathbf{Y},\sigma)$ comp. ii) $f:(\mathbf{X},\tau)\mapsto(\mathbf{Y},\sigma)$ is an into homeomorphism iii) $\overline{f(\mathbf{X})}=\mathbf{Y}$\\
-\emph{One-point compactification}: above, and $Y-f(\mathbf{X})$ is a singleton
-\\\underline{\emph{Theorems \& Lemmas}}\\
-Assume $(\mathbf{X},\tau)$ is Hausdorff. Then it has a Hausdorff one-point compactif. iff $(\mathbf{X},\tau)$ is locally compact. Assume $(\mathbf{X},\tau)$ is not compact $\square$
 \section{Topological Groups}
 \underline{\emph{Definitions}}\\
 \emph{Group} ($(\mathbf{G},\cdot)$): $\mathbf{G}\in$|SET|, $\cdot:\mathbf{G}\times\mathbf{G}\mapsto\mathbf{G}$ s.t.\\
@@ -181,7 +180,7 @@ iii) $\forall a\in\mathbf{G}\exists v\in\mathbf{G}:ab=ba=e$ (inverse)\\
 $\theta:\mathbf{G}\times\mathbf{G}\mapsto\mathbf{G},\theta(x,y)=xy$\\
 $\psi:\mathbf{G}\mapsto\mathbf{G},\psy(x)=x^{-1}$\\
 $\delta:\mathbf{G}\times\mathbf{G}\mapsto\mathbf{G},\delta(x,y)=xy^{-1}$\\
-\emph{Homomorphism}: $h:\mathbf{G}\mapsto\mathbf{H},h(x,y)=h(x)h(y)$\\
+\emph{Homomorphism}: $h:\mathbf{G}\mapsto\mathbf{H},h(x\cdot y)=h(x)h(y)$\\
 \emph{Topological Group}: $(\mathbf{G},\cdot,\tau)$ where\\
 i) $\theta$ is cont.\\
 ii) $\psi$ is cont.\\
@@ -210,7 +209,7 @@ i) $\lambda(e,x)=x \forall x\in\mathbf{X}$\\
 ii) $\lambda(g,\lambda(h,x))=\lambda(gh,x)\forall g,h\in\mathbf{G},x\in\mathbf{X}$\\
 iii) $\lambda$ is cont. when $\mathbf{G}\times\mathbf{X}$ has the product topology
 \\\underline{\emph{Theorems \& Lemmas}}\\
-Suppose $(\mathbf{G},\cdot,\sigma)$ acts cont. on $(\mathbf{X},\tau)$ with action $\lamgda$. Fix $g\in\mathbf{G}$ and define $\theta_g:\mathbf{X}\mapsto\mathbf{X}, \theta_g(x)=\lambda(g,x),x\in\mathbf{X}$. $\theta_g$ is a homeomorphism $\square$
+Suppose $(\mathbf{G},\cdot,\sigma)$ acts cont. on $(\mathbf{X},\tau)$ with action $\lambda$. Fix $g\in\mathbf{G}$ and define $\theta_g:\mathbf{X}\mapsto\mathbf{X}, \theta_g(x)=\lambda(g,x),x\in\mathbf{X}$. $\theta_g$ is a homeomorphism $\square$
 \section{More on Metric Spaces}
 \underline{\emph{Definitions}}\\
 \emph{Countably compact}: Every countable open cover of $\mathbf{X}$ has a finite subcover\\
@@ -238,7 +237,7 @@ iii) $(\mathbf{X},d)$ is compact $\square$
     f(2s) & 0\leq s\leq \frac{1}{2}\\
     g(2s-1) & \frac{1}{2}\leq x\leq 1\\
 \end{cases}
-$
+$\\
 \emph{Homotopic Paths}: $f,g$ paths in $\mathbf{X}:f(0)=g(0),f(1)=g(1)$. $f,g$ are path homotopic provided $\exists$ a continuous map $F:I^2\mapsto\mathbf{X}$ where\\
 i) $F(0,t)=f(0)=g(0)$\\
 ii) $F(1,t)=f(1)=g(1)$\\
