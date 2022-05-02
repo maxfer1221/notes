@@ -1,0 +1,263 @@
+\section{Metrics}
+\underline{\emph{Definitions}}\\
+\emph{Cauchy}: $\sum{|x_iy_i|}\leq||x_i||||y_i||$\\
+\emph{Minkowski}: $||x+y||\leq||x||+||y||$\\
+\emph{metric}: i) $\sigma(x,y)=0\iff x=y$\\
+ii) $\sigma(x,y)=\sigma(y,x) \forall x,y\in \mathbf{X}$\\
+iii) $\sigma(x,y)\leq\sigma(x,z)+\sigma(z,y)$\\
+\emp{Open ball}: $B_{\sigma}(x,\delta)=\{y\in\mathbf{X}:\sigma(x,y)<\delta\}$\\
+$\sigma$-open: $\forall x\in A,\exists \delta_x>0:B_{\sigma}(x,\delta_x)\subseteq A$
+\emph{Cont. at} $x_0$: $\forall\epsilon>0,\exists\delta>0:d(x,y)<\delta\implies\sigma(f(x),f(y))<\epsilon, x\in\mathbf{X},y\in\mathbf{Y}$. cont $\forall x\in\mathbf{X}$
+\\\underline{\emph{Theorems \& Lemmas}}\\
+$(\mathbf{X},\sigma)\in$|MET|, $B_{\sigma}(x,s)\subseteq\mathbf{X}$ is $\sigma$-open $\square$\\
+$f$ is continuous $\iff\forall\sigma$-open $V\subseteq\mathbf{Y},f^{-1}(v)$ is $d$-open $\square$
+\section{Topologies}
+\underline{\emph{Definitions}}\\
+\emph{Topology}: i) $\emptyset,\mathbf{X}\in\tau$ ii) $A,B\to A\cap B$ iii)$A_j\to \cup A_j$. $(\mathbf{X},\tau)\in$|TOP|\\
+\emph{Cont. at} $x_0$: $\forall V\in\sigma,f(x_0)\in V,\implies\exists U\in\tau,x_0\in U:f(U)\subseteq V$. cont $\forall x\in\mathbf{X}$
+\\\underline{\emph{Theorems \& Lemmas}}\\
+$f$ cont. $\iff\forall V\in\sigma,f^{-1}(V)\in\tau$\square
+\\\underline{\emph{Special}}\\
+\emph{Indiscrete}: $\tau=\{\emptyset,\mathbf{X}\}$
+\section{Bases \& Subbases}
+\underline{\emph{Definitions}}\\
+\emph{Base} $(\mathbf{B})$: $\forall V\in\tau,x\in V,\exists B\in\mathbf{B}:x\in B\subseteq V$.  $V=\cup\{B_i\}$\\
+\emph{First countable}: countable basis at each $x_0$\\
+\emph{Second countable}: $|\mathbf{B}|$ countable OR $\tau$ has a countable basis, i.e. $\exists\mathbf{B}\subseteq\tau:\forall V\in\tau, x\in V, \exists B\in\mathbf{B}:x\in B\subseteq V$ and $\mathbf{B}$ is countable\\
+\emph{Subbase} ($\mathcal{S}$): $\mathcal{S}\subseteq\mathcal{P}(\mathbf{X})$ and the set of finite intersections of $\mathcal{S}$ forms a basis for $\tau$\\
+\emph{Local basis at $x_0$} ($\mathbf{B_{x_0}}$): i) $x_0\in B\ \forall B\in \mathbf{B_{x_0}}$ ii) $V\in\tau,x_0\in V\implies\exists B\in\mathbf{B_{x_0}}:B\subseteq V$
+\\\underline{\emph{Theorems \& Lemmas}}\\
+If $\mathbf{B}\subseteq\mathcal{P}(\mathbf{X})\land$ i) $\cup \mathbf{B}=\mathbf{X}$ ii) $x\in B_1\cap B_2,\exists B_3\in\mathbf{B}:x\in B_3\subseteq B_1\cap B_2$. Then $\mathbf{B}$ is a basis for $\tau=\{A\subseteq\mathbf{X}:A=\cup\{B_i\in\mathbf{B}\}\}\square$\\
+$\mathcal{S}\subseteq\mathcal{P}(\mathbf{X})\land\cup\mathcal{S}=\mathbf{X}\implies\mathcal{S}$ is a subbasis for a top. $\tau$ on $\mathbf{X}\square$\\
+Second countable $\implies$ first countable $\square$
+\section{Closure, Interior \& Boundary}
+\underline{\emph{Definitions}}\\
+\emph{Closure} ($\overline{A}$): $\{x\in\mathbf{X}:V\cap A\neq\emptyset,\forall V\in\tau:x\in V\}$\\
+\emph{Interior} ($\mathring{A}$): $\{x\in A:\exists V\in\tau:x\in V\subseteq A\}$\\
+\emph{Boundary} ($\partial A$): $\{x\in\mathbf{X}:V\cap A\neq\emptyset$ and $V\cap A^c\neq\emptyset,\forall V\in\tau:x\in V\}$. $\partial A=\overline{A}\cap\overline{A^c}$
+\\\underline{\emph{Theorems \& Lemmas}}\\
+Let $(\mathbf{X},\tau})\in$|TOP|, $A\subseteq\mathbf{X},B\subseteq\mathbf{X}$:\\
+i) $A\subseteq\overline{A}$ ii) $A\subseteq B\implies\overline{A}\subseteq\overline{B}$\\iii) $\overline{A\cup B}=\overline{A}\cup\overline{B}$ iv) $\overline{A\cap B}\subseteq\overline{A}\cap\overline{B}$\\
+v) $\overline{(\overline{A})}=\overline{A}$ vi) $\overline{A}$ is closed vii) $\overline{A}$ is the smallest closed set containing A\\ viii) $\overline{A}=A\iff A^c\in\tau\square$\\
+Let $(\mathbf{X},\tau})\in$|TOP|, $A\subseteq\mathbf{X},B\subseteq\mathbf{X}$:\\
+i) $\mathring{A}\subseteq A$ ii) $A\subseteq B\implies\mathring{A}\subseteq\mathring{B}$\\iii) $\mathring{(A\cap B)}=\mathring{A}\cap\mathring{B}$ iv) $\mathring{A}\cup \mathring{B}\subseteq\mathring{(A\cup B)}$\\
+v) $\mathring{(\mathring{A})}=\mathring{A}$ vi) $\mathring{A}$ is open vii) $\mathring{A}$ is the largest closed set contained in A\\ viii) $\mathring{A}=A\iff A\in\tau\square$
+\section{Separability, Convergence \& Compactness}
+\underline{\emph{Definitions}}\\
+\emph{Separable}: $(\mathbf{X},\tau)\in$|TOP|$:\exists$ a countable $A\subseteq\mathbf{X}:\overline{A}=\mathbf{X}$. $A$ is \emph{dense} in $\mathbf{X}$\\
+\emph{Converging sequence} ($\{x_m\}$): $\forall V\in\tau,x\in V\implies x_m\in V \forall m\geq N,\exists N$, i.e., $\{x_m\}$ belongs to V eventually\\
+\emph{Cauchy sequence} ($\{x_m\}$): $\forall\epsilon>0,\exists N:d(x_a,x_b)<\epsilon\forall a,b\geq N$\\
+\emph{Complete $M\in$|MET|}: Each Cauchy sequence converges\\
+\emph{Hausdorff}: $\forall x\neq y\in\mathbf{X},\exists U,V\in\tau:x\in U,y\in V, U\cap V=\emptyset$
+\\\underline{\emph{Theorems \& Lemmas}}\\
+Second countable $\implies$ separable $\square$
+$(\mathbf{X},d)\in$|MET| is separable $\iff$ second countable $\square$\\
+Let $(\mathbf{X},\tau)\in$|TOP| be first countable, and $A\subseteq\mathbf{X}\implies x\in\overline{A}\iff\exists$ a sequence in $A$ which converges to $x$
+\section{Continuity}
+\\\underline{\emph{Theorems \& Lemmas}}\\
+TFAE: i) $f$ is continuous ii) $f^{-1}(V)\in\tau\forall V \in\sigma$ iii) $f^{-1}(F)$ is closed $\forall F\subseteq Y$ that is closed iv) $f(\overline{A})\subseteq \overline{f(A)}\forall A\subseteq\mathbf{X}$ v) $\overline{f^{-1}(B)}\subseteq f^{-1}(\overline{B})\forall B\subseteq Y$ \square\\
+$f:(\mathbf{X},\tau)\mapsto(\mathbf{Y},\sigma)$ and $\mathcal{S}$ be a subbase for $\sigma$. $f^{-1}(S)\in\tau   \forall S\in\mathcal{S}\implies f$ is continuous $\square$
+\section{Homeomorphisms}
+\underline{\emph{Definitions}}\\
+\emph{Homeomorphism}: i) bijection ii) continuous iii) inverse is continuous\\
+\emph{Open} (\emph{Closed}) map: $f(V) (f(F))$ is open (closed) for every open (closed) V (F)\\
+\emph{Topological property}: property invariant under homeomorphisms
+\\\underline{\emph{Theorems \& Lemmas}}\\
+Homeomorphisms are open \& closed $\square$
+\section{Subspaces}
+\underline{\emph{Definitions}}\\
+\emph{Subspace topology on A} ($\tau_A$): $\{B\subseteq A:B=V\cap A\exists V\in\tau\}$. Also: $\{V\cap A:V\in\tau\}$\\
+\emph{Hereditary property}: Invariant through subspaces\\
+\emph{Embedding}: $f:(\mathbf{X},\tau)\mapsto(\mathbf{Y},\sigma)$. If $F:(\mathbf{X},\tau)\mapsto(f(\mathbf{X}),\tau_{f(\mathbf{X})})$ is a homeomorphism, then $f$ is an embedding.\\
+\emph{Embedded}: $(\mathbf{X},\tau)$ is embedded in $(\mathbf{Y},\sigma)$
+\\\underline{\emph{Theorems \& Lemmas}}\\
+$(\mathbf{X},\tau)\in$|TOP| and $A\subseteq \mathbf{X}\implies(A,\tau_A)\in$|TOP| $\square$\\
+$(\mathbf{X},\tau)\in$|TOP|$, A\subseteq\mathbf{X}\implies$
+i) $B\subseteq A,B^c\in\tau_A\iff B=C\cap A,\exists C\subseteq\mathbf{X}$
+ii) $B\subseteq A\implies \overline{B}^{\tau_A}=\overline{B}^{\tau}\cap A$
+iii) $B^c\in\tau,B\subseteq A,\implies B^c\in\tau_A$
+iv) $A^c\in\tau,B\subseteq A,B^c\in\tau_A\implies B^c\in\tau\square$
+\section{Initial and Final Topologies}
+\underline{\emph{Definitions}}\\
+\emph{Source}: $\mathbf{X}\in$|SET|, $(\mathbf{Y}_j,\sigma_j)\in$|TOP|, $j\in J$. Suppose $f_j:\mathbf{X}\mapsto\mathbf{Y}_j$. $\mathbf{X}\xmapsto{f_j}(\mathbf{Y},\sigma_j)$ is a source.\\
+\emph{Sink}: $(\mathbf{X}_j,\tau_j)\xmapsto{f_j}\mathbf{Y}$
+\\\underline{\emph{Theorems \& Lemmas}}\\
+Consider the source $\mathbf{X}\xmapsto{f_j}(\mathbf{Y}_j,\tau_j)$:\\
+i) $\exists$ a coarsest (smallest) topology $\tau_I$ on $\mathbf{X}:f_j:(\mathbf{X},\tau_I)\mapsto(\mathbf{Y}_j,\sigma_j)$ is continuous\\
+ii) $g:(\mathbf{Z},\delta)\mapsto(\mathbf{X},\tau_I)$ is continuous $\iff f_j\circ g:(\mathbf{Z},\delta\mapsto(\mathbf{Y}_j,\sigma_j)$ is cont. $\forall j$\\
+iii) $\tau_I$ is the unique top. on $\mathbf{X}$ which obeys (ii)\\
+iv) if $\{x_m\}\xrightarrow{\tau_I}x\implies f_j(x_m)\xrightarrow{\sigma_j}f_j(x),\forall j\square$\\
+Consider the sink $(\mathbf{X}_j,\tau_j)\xmapsto{f_j}\mathbf{Y}$:\\
+i) $\exists$ a finest (largest) top. $\tau_F$ on $\mathbf{Y}$ such that $f_j:(\mathbf{X},\tau_j)\mapsto(\mathbf{Y},\tau_F)$ is cont. $\forall j$\\
+ii) $\forall g:(\mathbf{Y},\tau_F)\mapsto(\mathbf{Z},\delta), g$ is cont.$\iff g\circ f_j:(\mathbf{X}_j,\tau_j\mapsto(\mathbf{Z},\delta)$ is cont. $\forall j$\\
+iii) $\tau_F$ is the unique top. on $\mathbf{Y}$ obeying (ii), called the final topology $\square$
+\\\underline{\emph{Remarks}}\\
+Basis for $\tau_I$: $\mathcal{S}=\{f_j^{-1}(V):V\in\sigma_j,\forall
+j\}\square$
+Basis for $\tau_I$ with $\mathcal{B}_j$ basis of $\sigma_j$: $\mathcal{S}=\{f_j^{-1}(B):B\in\mathcal{B}_j,\forall j\}\square$
+\section{Product Spaces}
+\underline{\emph{Definitions}}\\
+\emph{jth projection map}: $\pi_j:\mathbf{X}\mapsto\mathbf{X}_j,\pi_j((x_i)_j)=x_j$\\
+\emph{Product topology} ($\tau_p$): $\tau_I$ such that $\mathbf{X}\xmapsto{\pi_j}(\marhbf{X}_j,\tau_j)$ is continuous $\forall j,\mathbf{X}= \prod\limits_{j\in J}\mathbf{X}_j$\\
+\emph{Subbase for $\tau_p$}:
+$\{\pi_j^{-1}(V):V\in\tau_j\}$ or $\{\pi_j^{-1}(B):B\in\mathbf{B}_j\},\mathbf{B}_j$ a basis of $\tau_j$\\
+\emph{Typical basis member for $\tau_p$}:
+$\prod\limits_{j\in J}B_j:B_j=\mathbf{X}_j$ except for finitely many j which are members of $\mathbf{B}_j$\\
+\emph{Box topology}: $\tau_B=\{\prod\limits_{j\in J}B_j:B_j\in\mathbf{B}_j\}$\\
+\emph{Productive property}: $(\mathbf{X},\tau_p)$ has the property provided each $(\mathbf{X}_j,\tau_j)$ has it
+\\\underline{\emph{Theorems \& Lemmas}}\\
+$\mathcal{S}$ is a subbase for $\tau$. If $\{x_m\}\xrightarrow{\tau}x\iff\forall S\in\mathcal{S}$ with $x\in S; x_m\in S\forall m\geq N\square$\\
+Consider $(\mathbf{X},\tau_I)\xmapsto{f_j}(\mathbf{Y}_j,\sigma_j)$. $\{x_m\}\xrightarrow{\tau_I}x\iff\forall j, f_j(x_m)\xrightarrow{\sigma_j}f_j(x), m\to\infty\square$
+Let $(\mathbf{X}_\kappa,\tau_\kappa), \kappa\in\mathcal{K}$ be a collection of top. spaces. Fix $j\in\mathcal{K}$, then $(\mathbf{X}_j,\tau_j)$, can be embedded in $(\mathbf{X},\tau_p),\mathbf{X}=\prod\limits_{\kappa\in\mathcal{K}}\mathbf{X}_\kappa\square$\\
+$(\mathbf{X},\tau)\in$|TOP| is Hausdorff $\iff\Delta=\{(x,x):x\in\mathbf{X}\}$ is closed in $(\mathbf{X}\times\mathbf{X},\tau_p)$
+\\\underline{\emph{Remarks}}\\
+$\tau_p\subseteq\tau_B$, thus $\pi_j:(\mathbf{X},\tau_B)\mapsto(\mathbf{X}_j,\tau_j)$ is cont.
+\section{Quotient Spaces}
+\underline{\emph{Definitions}}\\
+\emph{Quotient topology}: Final topology where $(\mathbf{X},\tau)\xmapsto{f}\mathbf{Y}, f$ surjective (onto). $\tau_Q=\{V\subseteq Y:f^{-1}(V)\in\tau\}$\\
+\emph{Quotient map}: $f:(\mathbf{X}, \tau)\mapsto(\mathbf{Y},\tau_Q)$\\
+\emph{Open map}: $f:(\mathbf{X},\tau)\mapsto(\mathbf{Y},\sigma)$, where $V\in\tau\implies f(V)\in\sigma$\\
+\emph{Closed map}: $f:(\mathbf{X},\tau)\mapsto(\mathbf{Y},\sigma)$, where $V^c\in\tau\implies (f(V))^c\in\sigma$
+\\\underline{\emph{Theorems \& Lemmas}}\\
+f cont. surjection $\land$ (f is open $\lor$ f is closed) $\implies$ f is a quotient map $\square$
+\section{Connectedness}
+\underline{\emph{Definitions}}\\
+\emph{Disconnected}: $\mathbf{X}=V\cup W, V,W\in\tau,V\neq\emptyset\neq W,V\cap W=\emptyset$\\
+\emph{Connected}: Not disconnected\\
+\emph{Connected subset}: $A\subseteq\mathbf{X},(A,\tau_A)$ is connected\\
+\emph{Path (arcwise) connected}:
+$\forall a,b\in\mathbf{X},\exists f^{cont}:[0,1]\mapsto\mathbf{X}:f(0)=a,f(1)=b$. $f$ is a path from a to b
+\\\underline{\emph{Theorems \& Lemmas}}\\
+$(\mathbb{R},\tau)$ is connected $\square$\\
+$f:(\mathbf{X},\tau)\mapsto(\mathbf{Y},\sigma)$ cont. and surj., then $(\mathbf{X},\tau)$ connected $\implies(\mathbf{Y},\sigma)$ connected $\square$\\
+Suppose $(\mathbf{X},\tau)\in$|TOP|:
+i) $A\subseteq\mathbf{X}$ conn. $\implies B$ conn., $A\subseteq B\subseteq\overline{A}$
+ii) $A_j$ conn. and $\exists\kappa\in J:A_\kappa\cap A_j\neq\emptyset\forall j\neq\kappa\implies\bigcup\limits_{j\in J}A_j$ is conn. $\square$\\
+A subset of $(\mathbb{R},\tau)$ is conn$\iff$it is an interval $\square$\\
+IVT: Assume $f:(\mathbf{X},\tau)\mapsto\mathbb{R}$ is cont. and $(\mathbf{X},\tau)$ is conn. If $a,b\in\mathbf{X}$ and $f(a)<f(b)$ then $[f(a),f(b)]\subseteq f(\mathbf{X}) \square$\\
+i) A path conn. space is conn.\\
+ii) $\mathbb{R}^\kappa$ is path conn. 
+$\square$\\
+$(\mathbf{X},\tau_p)$ conn.$\iff(\mathbf{X}_j,\tau_j)$ is conn.$\forall j$
+\section{Compactness}
+\underline{\emph{Definitions}}\\
+\emph{Open cover}: $\mathbf{e}\subseteq\tau,\cup\mathbf{e}=\mathbf{X}$
+\emph{Open cover of A}:
+$A\subseteq\cup\mathbf{e}$\\
+\emph{Compact}:
+Every open cover has finite subcover. $\mathbf{e}\subseteq\mathbf{X}$ and $A\subseteq\cup\mathbf{e},\implies\exists V\subseteq\mathbf{e}:A\subseteq\cup V \land$\\
+\emph{Neighborhood of $x$}: $B\subseteq\mathbf{X}:x\in V\subseteq B,\exists V\in\tau$\\
+\emph{Locally compact}: $\forall x\in\mathbf{X}$, x has a compact neighborhood.
+\\\underline{\emph{Theorems \& Lemmas}}\\
+Let $(\mathbf{X},\tau)\in$|TOP|: \\
+i) if $\mathbf{X}$ compact, so is each closed subset\\
+ii) if $\mathbf{X}$ Hausdorff, each compact subset is closed\\
+iii) if $\mathbf{X}$ is a metric space, each copmact subset is closed and bounded\\
+iv) if $f:(\mathbf{X},\tau)\mapsto(\mathbf{Y},\sigma)$ is cont., $\mathbf{X}$ is compact, $\mathbf{Y}$ is Hausdorff, then $f(\mathbf{X})$ is a compact subset of $\mathbf{Y}$ and is closed $\square$\\
+Let $I=[a,b]\subseteq(\mathbb{R},\tau)$. I is compact $\square$\\
+$(\mathbf{X},\tau)$ compact $\iff(\mathbf{X}_j,\tau_j)$ compact $\square$\\
+$A\subseteq\mathbb{R}$ compact $\iff A$ closed and bounded $\square$\\
+Let $f:(\mathbf{X},\tau)\mapsto\mathbb{R}$ be cont.:\\
+i) $\mathbf{X}$ comp. $\implies\inf f(\mathbf{X})\in f(\mathbf{X})$ and $\sup f(\mathbf{X})\in f(\mathbf{X})$\\
+ii) $\mathbf{X}$ comp. and conn. $\implies f(\mathbf{X})=[f(x_0),f(x_1)]\square$\\
+Let $f:(\mathbf{X},\tau)\mapsto(\mathbf{Y},\sigma)$ be a cont., open surjection. $(\mathbf{X},\tau)$ loc. comp. $\implies(\mathbf{Y},\sigma)$ loc. comp. $\square$\\
+Let $(\mathbf{X},\tau)$ be loc. comp. and Hausdorff. If $A\subseteq\mathbf{X}$ is closed, $(A,\tau_A)$ is also loc. comp. $\square$\\
+Let $(\mathbf{X},\tau)$ be Hausdorff. Let compacts subsets $A,B\subseteq\mathbf{X},A\cap B=\emptyset$: \\
+i) if $x\notin A,\exists V_1,V_2\in\tau:x\in V_1,A\subseteq V_2,V_1\cap V_2=\emptyset$\\
+ii) $\exists V_1,V_2\in\tau:A\subseteq V_1,B\subseteq V_2, V_1\cap V_2=\emptyset \square$\\
+Let $(\mathbf{X},\tau)$ be loc. comp. and Hausdorff. $x\in V\in\tau\implies\exists W\in\tau:x\in W\subseteq\overline{W}\subseteq V, \overline{W}$ compact $\square$
+\\\underline{\emph{Remarks}}\\
+If $\mathbf{e}$ is a $\tau$-open cover of A, then $\mathcal{D}=\{V\cap A:V\in\mathbf{e}\}$ is a $\tau_A$-open cover of A
+\emph{Compactification} ($((\mathbf{Y},\sigma), f)$): i) $(\mathbf{Y},\sigma)$ comp. ii) $f:(\mathbf{X},\tau)\mapsto(\mathbf{Y},\sigma)$ is an into homeomorphism iii) $\overline{f(\mathbf{X})}=\mathbf{Y}$\\
+\emph{One-point compactification}: above, and $Y-f(\mathbf{X})$ is a singleton
+\\\underline{\emph{Theorems \& Lemmas}}\\
+Assume $(\mathbf{X},\tau)$ is Hausdorff. Then it has a Hausdorff one-point compactif. iff $(\mathbf{X},\tau)$ is locally compact. Assume $(\mathbf{X},\tau)$ is not compact $\square$
+\section{Topological Groups}
+\underline{\emph{Definitions}}\\
+\emph{Group} ($(\mathbf{G},\cdot)$): $\mathbf{G}\in$|SET|, $\cdot:\mathbf{G}\times\mathbf{G}\mapsto\mathbf{G}$ s.t.\\
+i) $a\cdot(b\cdot c)=(a\cdot b)\cdot c$ (associativity)\\
+ii) $\exists e\in\mathbf{G}:ae=ea=a\forall a\in\mathbf{G}$ (identity)\\
+iii) $\forall a\in\mathbf{G}\exists v\in\mathbf{G}:ab=ba=e$ (inverse)\\
+$\theta:\mathbf{G}\times\mathbf{G}\mapsto\mathbf{G},\theta(x,y)=xy$\\
+$\psi:\mathbf{G}\mapsto\mathbf{G},\psy(x)=x^{-1}$\\
+$\delta:\mathbf{G}\times\mathbf{G}\mapsto\mathbf{G},\delta(x,y)=xy^{-1}$\\
+\emph{Homomorphism}: $h:\mathbf{G}\mapsto\mathbf{H},h(x,y)=h(x)h(y)$\\
+\emph{Topological Group}: $(\mathbf{G},\cdot,\tau)$ where\\
+i) $\theta$ is cont.\\
+ii) $\psi$ is cont.\\
+\emph{Subgroup}: $\mathbf{H}\subseteq\mathbf{G}:\forall a,b\in\mathbf{H},ab^{-1}\in\mathbf{H}. \mathbf{H}\cdot\mathbf{H}^{-1}\subseteq\mathbf{H}$\\
+\emph{Normal Subgroup}: Subgroup $\mathbf{H}$ where $\forall a\in\mathbf{G},a\mathbf{H}a^{-1}\subseteq\mathbf{H}$
+\\\underline{\emph{Theorems \& Lemmas}}\\
+If $h$ is a homomorphism, then $h(e_\mathbf{G})=e_\mathbf{H},h(x^{-1})=(h(x))^{-1} \square$\\
+Assume $f_i:\mathbf{X}_i\mapsto\mathbf{Y}_i,i=1,2$ are cont.
+Define $f_1\times f_2:\mathbf{X}_1\times\mathbf{X}_2\mapsto\mathbf{Y}_1\times\mathbf{Y}_2,(f_1\times f_2)(x_1,x_2)=(f_1(x_1),f_2(x_2))$ then $f_1\times f_2$ is cont. $\square$\\
+$(\mathbf{G},\cdot,\tau)\in$|TG|$\iff\delta$ is cont. $\square$\\
+Fix $a\in\mathbf{G}$. The following are homeomorphisms:\\
+i) $x\mapsto ax$ (left transl.)\\
+ii) $x\mapsto xa$ (right trans.)\\
+iii) $x\mapsto axa^{-1} \square$\\
+$e\in V\in\tau\iff a\in aV\in\tau \square$\\
+$a\in W\in\tau\implies\exists e\in V\in\tau:W=aV \square$\\
+$(\mathbf{G},\tau)$ Hausdorff $\iff\{e\}$ closed $\square$\\
+$\mathbf{H}$ (normal) subgroup of $\mathbf{G}\implies\overline{\mathbf{H}}$ (normal) subgroup of $\mathbf{G}.$ In particular, $(\mathbf{H},\cdot,\tau_\mathbf{H}),(\overline{\mathbf{H}},\cdot,\tau_{\overline{\mathbf{H}}})\in$|TG| $\square$\\
+Let $h:(\mathbf{G},\cdot,\tau)\mapsto(\mathbf{H},\cdot,\sigma)$ be a homomorphism. $h$ cont. at $x=a\implies h$ is cont. $\square$\\
+$(\mathbf{G},\cdot)\xmapsto{h_j}(\mathbf{H}_j,\cdot,\sigma_j),\tau$ the initial top. on $\mathbf{G}$. Then $(\mathbf{G},\cdot,\tau)\in$|TOP| provided $(\mathbf{H}_j,\cdot,\sigma_j)\in$|TG| $\forall j\square$\\
+Let $h$ be a homomorphism. If $h$ maps open sets containing $e_\mathbf{G}$ to open sets containing $e_\mathbf{H}$, then h is an open map. Further, if $h$ is a cont. surj., then $h$ is a quotient map $\square$
+\section{Actions}
+\underline{\emph{Definitions}}\\
+\emph{Action ($\lambda$), $\mathbf{G}$ acts on $\mathbf{X}$}: $\lambda:\mathbf{G}\times\mathbf{X}\mapsto\mathbf{X}$ such that\\
+i) $\lambda(e,x)=x \forall x\in\mathbf{X}$\\
+ii) $\lambda(g,\lambda(h,x))=\lambda(gh,x)\forall g,h\in\mathbf{G},x\in\mathbf{X}$\\
+iii) $\lambda$ is cont. when $\mathbf{G}\times\mathbf{X}$ has the product topology
+\\\underline{\emph{Theorems \& Lemmas}}\\
+Suppose $(\mathbf{G},\cdot,\sigma)$ acts cont. on $(\mathbf{X},\tau)$ with action $\lamgda$. Fix $g\in\mathbf{G}$ and define $\theta_g:\mathbf{X}\mapsto\mathbf{X}, \theta_g(x)=\lambda(g,x),x\in\mathbf{X}$. $\theta_g$ is a homeomorphism $\square$
+\section{More on Metric Spaces}
+\underline{\emph{Definitions}}\\
+\emph{Countably compact}: Every countable open cover of $\mathbf{X}$ has a finite subcover\\
+\emph{Finite Intersection Property}: $\bigcap_{j=1}^m\mathbf{D}_j\neq\emptyset$ for each finite collection $\{\mathbf{D}_j:1\leq j\leq m\}\subseteq\mathcal{D}$\\
+\emph{Nonempty Intersection}: $\bigcap\limits_{\mathbf{D}\in\mathcal{D}}\mathbf{D}\neq\emptyset$\\
+\emph{Sequentially Compact}: Each sequence in $\mathbf{X}$ has a convergent subsequence\\
+\emph{Lindelof}: Every open cover has countable subcover\\
+\emph{Totally Bounded}: $\forall\delta>0,\exists x_1,x_2,...,x_n\in\mathbf{X}:\bigcup\limits_{i\in I}\mathcal{B}(x_i,\delta)=\mathbf{X}$
+\\\underline{\emph{Theorems \& Lemmas}}\\
+$(\mathbf{X},d)\in$|MET|, TFAE:\\
+i) $(\mathbf{X},d)$ is countably compact\\
+ii) Each countable collection of closed subsets of $\mathbf{X}$ with f.i.p. has nonempty intersection\\
+iii) $(\mathbf{X},d)$ is sequentially compact $\square$\\
+$\mathbf{X}$ compact $\implies$ totally bounded $\square$\\
+Sequential compactness $\implies$ total bound. $\implies$ second countable $\implies$ Lindelof $\square$\\
+TFAE: i) $(\mathbf{X},d)$ is countably compact\\
+ii) $(\mathbf{X},d)$ is sequentially compact\\
+iii) $(\mathbf{X},d)$ is compact $\square$
+\section{Path Homotopy}
+\underline{\emph{Definitions}}\\
+\emph{Loop}: A \emph{path} where $f(0)=f(1)$\\
+\emph{Reverse of f}: The path $\overline{f}:[0,1]\mapsto\mathbf{X},\overline{f}(s)=f(1-s),0\leq s\leq 1$\\
+\emph{Path Multiplication}: Let $f,g$ be paths in $\mathbf{X}:f(1)=g(0)$. Define $f*g$ to be the path $(f*g)(s)=
+\begin{cases}
+    f(2s) & 0\leq s\leq \frac{1}{2}\\
+    g(2s-1) & \frac{1}{2}\leq x\leq 1\\
+\end{cases}
+$
+\emph{Homotopic Paths}: $f,g$ paths in $\mathbf{X}:f(0)=g(0),f(1)=g(1)$. $f,g$ are path homotopic provided $\exists$ a continuous map $F:I^2\mapsto\mathbf{X}$ where\\
+i) $F(0,t)=f(0)=g(0)$\\
+ii) $F(1,t)=f(1)=g(1)$\\
+iii) $F(s,0)=f(s)$\\
+iv) $F(s,1)=g(s)$\\
+F is a \emph{Path Homotopy}\\
+\emph{Homotopy Path Equivalence Class}: $[f]=\{g:g\sim f,$ g is a path in $\mathbf{X}\}$\\
+\emph{Constant Path}: $e_x:I\mapsto\mathbf{X},e_x(s)=x\forall s\in I$. Note $e_x$ is a loop\\
+\emph{Straight Line Homotopy}: $F(s,t)=(1-t)f(s)+tg(s)$
+\\\underline{\emph{Theorems \& Lemmas}}\\
+\emph{Parting Lemma}: Assume $(\mathbf{X},\tau)\in$|TOP|, $\mathbf{X}=A\cup B$, $A$ and $B$ closed subsets of $\mathbf{X}$. Suppose $f:(A,\tau_A)\mapsto(\mathbf{Y},\sigma)$ and $g:(B,\tau_B)\mapsto(\mathbf{Y},\sigma)$ are each cont. Further, let $f(x)=g(x)\forall x\in A\cap B$. Define $h:\mathbf{X}\mapsto\mathbf{Y}$ by $h(x)=
+\begin{cases}
+    f(x) & x\in A\\
+    g(x) & x\in B\\
+\end{cases}$.  $h$ is continuous $\square$\\
+Let $(\mathbf{X},\tau)\in$|TOP|. If $f,g$ are paths in $\mathbf{X}$, define $f\sim g\iff f$ and $g$ are path homotopic. $\sim $ is an equivalence relation on the set of all paths in $\mathbf{X} \square$\\
+All paths in $(\mathbf{X},\tau)$:\\
+i) $f*e_x_1\sim f$ and $e_x_0*f\sim f$ where $f(0)=x_0,f(1)=x_1$\\
+ii) $f*\overline{f}\sim e_x_0$ and $\overline{f}*f\sim e_x_1$\\
+iii) $f\sim g\implies\overline{f}\sim \overline{g}$\\
+iv) $f\sim f_1,g\sim g_1,\exists f*g\implies f*g\sim f_1*g_1$
+v) If $f*g,g*h$ exist, then $(f*g)*h\sim f*(g*h) \square$
