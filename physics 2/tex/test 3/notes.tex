@@ -1,0 +1,133 @@
+\section{Magnetic Induction}
+\subsection{Flux}
+Magnetic flux (measured in Webers, Wb=Tm$^2$) measures the amount of magnetic field passing through a loop. If the field is uniform and the area is flat:
+$$\Phi_B = \vec{A}\cdot\vec{B}=AB\cos{\theta}$$
+Otherwise:
+$$\Phi_B = \int\vec{B}\cdot \vec{dA}$$
+\subsection{Faraday's Law}
+An electromotive force ($\varepsilon$) is induced from a change in magnetic flux:
+$$\varepsilon = -\frac{d\Phi_B}{dt}$$
+If the circuit consists of N loops of the same area, and $\Phi_B$ is the magnetic flux through one loop:
+$$\varepsilon = -N\frac{d\Phi_B}{dt}$$
+In integral form:
+$$\oint \vec{E}\cdot \vec{ds}=-\frac{d\Phi_B}{dt}$$
+\subsection{Motion Electromotive Force}
+For a conductor of length $\ell$ moving with velocity $\vec{v}$ through a constant magnetic field $\vec{B}$, the electrons experience a force (right hand rule for direction):
+$$F=q\vec{v}\times\vec{B}$$
+The separation produces an electric field $E=vB$ which creates a potential difference $\Delta V=E\ell=vB\ell$
+\subsection{Lenz's Law}
+The induced current in a loop is in the direction that creates a magnetic field that opposes the change in magnetic flux through the area enclosed by the loop
+\subsection{Rotating Loops}
+For a loop rotating with angular velocity $\omega$:
+$$\Phi_B(t)=AB\cos{\omega t}$$ 
+The induced emf is:
+$$\varepsilon=-N\frac{d\Phi_B}{dt}=-NAB\omega\sin{\omega t}$$
+\subsection{Inductors}
+Emf for an inductor with inductance L (measured in $H=\frac{V\cdot s}{A}$):
+$$\varepsilon_L=-L\frac{dI}{dt}\implies L=-\frac{\varepsilon_L}{I'(t)}=\frac{N\Phi_B}{I}$$
+Inductance for a solenoid with N turns and length $\ell$:
+$$\Phi_B=\mu_0\frac{N}{\ell}IA\implies L=\mu_0n^2V$$
+Where $V=A\ell$ is the volume, and $n=\frac{N}{\ell}$ is the turn density. The energy stored in an inductor is:
+$$U=\frac{1}{2}LI^2$$
+\section{Maxwell's Equations \& EM Waves}
+\subsection{Equations}
+Gauss' Electrostatics: $\oint\vec{E}\cdot\vec{dA}=\frac{q}{\varepsilon_0}$\\
+Gauss' Magnetism: $\oint\vec{B}\cdot\vec{dA}=0$\\
+Faraday's: $\oint\vec{E}\cdot\vec{dl}=-\frac{d\Phi_B}{dt}$\\
+Ampere's: $\oint\vec{B}\cdot\vec{dl}=\mu_0(I+\varepsilon_0\frac{d\Phi_E}{dt})$\\
+In a vacuum:\\
+Gauss' Electrostatics: $\oint\vec{E}\cdot\vec{dA}=0$\\
+Ampere's: $\oint\vec{B}\cdot\vec{dl}=\mu_0\varepsilon_0\frac{d\Phi_E}{dt}$
+\subsection{Electromagnetic Waves}
+The $\vec{E}$ and $\vec{B}$ fields in plane EM waves are always perpendicular to each other and perpendicular to the direction of propagation. In general:
+$$E(x,t)=E_{\text{max}}\sin{(kx-\omega t)}\vec{u}$$
+$$B(x,t)=B_{\text{max}}\sin{(kx-\omega t)}\vec{v}$$
+and the direction of propagation can be found by $\vec{w}=\vec{u}\times\vec{v}$\\
+EM waves propagate with speed $c=\frac{1}{\sqrt{\varepsilon_0\mu_0}}$ in a vacuum. $|\vec{E}|=c|\vec{B}|$, and the fields oscillate in phase. \\
+The frequency $f$ and wavelength $\lambda$ of an EM wave follow $c=\frac{\omega}{k}=\frac{\omega\lambda}{2\pi}=f\lambda$, $\lambda=\frac{c}{f}$\\
+EM waves carry energy in their $\vec{B}$, $\vec{E}$ fields with density:
+$$u=u_E+u_B=\frac{1}{2}(\varepsilon_0E^2+\frac{1}{\mu_0}B^2)$$
+\subsubsection{Poynting Vector}
+The Poynting vector (units $Jm^{-2}s^{-1}=Watts/m^2$) in the direction of propagation represents energy flow per unit area:
+$$S=\frac{1}{\mu_0}\vec{E}\times\vec{B}$$
+\subsubsection{Wave Intensity}
+Intensity is the time average of the Poynting vector:
+$$I=\frac{E_{\text{max}}B_{\text{max}}}{2\mu_0}=\frac{E_{\text{max}}^2}{2\mu_0c}=\frac{cB_{\text{max}}^2}{2\mu_0}$$
+\section{AC Circuits}
+\subsection{Sinusoidal Voltage}
+$$V(t)=V_{\text{max}}\cos{(\omega t)}, \omega=\frac{2\pi}{T}=2\pi f$$
+\subsection{Circuits}
+\subsubsection{Resistor Circuits}
+The voltage and current are \emph{in phase}, Ohm's law works as usual:
+$$i_R=\frac{v_R}{R}\implies I_R\cos{\omega t} = \frac{V_R\cos{\omega t}}{R}$$
+$$p_R=i_R^2R=I_R^2R\cos^2\omega t$$
+Average power: $P_R=\frac{1}{2}I_R^2R$\\
+For rms: $P_R=I_{\text{rms}}V_{\text{rms}}$
+\subsubsection{Capacitor Circuits}
+Charge on the capacitor follows:
+$$q=Cv_C=CV_C\cos{\omega t}$$
+And the resulting current is:
+$$i_C=\frac{dq}{dt}=-\omega CV_C\sin{\omega t}$$
+or
+$$i_C=\omega CV_C\cos{(\omega t + \frac{\pi}{2})}$$
+The current through a capacitor is \emph{ahead} of voltage by $\frac{\pi}{2}$ radians.\\
+\emph{Capacitive Reactance} behaves like resistance, also measured in ohms ($\Omega$):
+$$X_C=\frac{1}{\omega C}, V_C=I_CX_C$$
+\subsubsection{Inductor Circuits}
+Inductor voltage is equal to emf and proportional to change in current:
+$$v_L=V_L\cos{\omega t}=L\frac{di_L}{dt}$$
+Current through the inductor is \emph{behind} of voltage by $\frac{\pi}{2}$ radians:
+$$i_L=\frac{V_L}{\omega L}\sin{\omega t}=\frac{V_L}{\omega L}\cos{(\omega t - \frac{\pi}{2})}$$
+\emph{Inductive Reactance} behaves like resistance:
+$$X_L = \omega L, V_L=I_LX_L$$
+\subsection{Series RLC Circuit}
+\subsubsection{Phasors}
+$$i=I\cos{(\omega t - \phi)}=i_R=i_L=i_C$$
+$$\phi=\tan^{-1}{\frac{X_L-X_C}{R}}$$
+$$v_R=IR\cos{\omega t}, v_L=IX_L\cos{\omega t + \frac{\pi}{2}}$$
+$$v_C=IX_C\cos{\omega t - \frac{\pi}{2}}$$
+\subsubsection{Current \& Voltage}
+Peak voltage squared:
+$$\varepsilon_{\text{0}}^2=V_R^2+(V_L-V_C)^2$$
+$$\varepsilon_{\text{0}}^2=[R^2+(X_L-X_C)^2]I^2$$
+Peak current:
+$$I=\frac{\varepsilon_0}{\sqrt{R^2+(X_L-X_C)^2}}=\frac{\varepsilon_0}{Z}$$
+Root mean squared:
+$$I_{\text{rms}}=\frac{I}{\sqrt{2}},V_{\text{rms}}=\frac{V}{\sqrt{2}}$$
+\subsubsection{Impedance and Resonance}
+Impedance is the measure of current dumping in the circuit:
+$$Z=\sqrt{R^2+(X_L-X_C)^2}, V=IZ$$
+Resonance occurs at the resonant frequency $f_0$ when current is at its maximum value:
+$$X_L=X_C\implies f_0 =\frac{1}{2\pi\sqrt{LC}},\phi=0$$
+$$\omega_0=2\pi f_0=\frac{1}{\sqrt{LC}}$$
+$$\omega>\omega_0\iff X_L>X_C, \phi > 0$$
+$$\omega<\omega_0\iff X_L<X_C, \phi < 0$$
+\subsubsection{Power}
+Power factor: $\cos\phi$
+$$P_{\text{avg}}=I_{\text{rms}}V_{\text{rms}}\cos\phi$$
+$$P_{\text{avg}}=\frac{(V_{\text{rms}})^2R\omega^2}{R^2\omega^2+L^2(\omega^2-\omega_0^2)^2}$$
+\section{Optics}
+\subsection{Superposition}
+Two or more light waves passing through the same point combine electric fields:
+$$E_{\text{total}}=\sum_{i=0}^nE_i,P\propto E^2$$
+\emph{Constructive} interference occurs when peaks meet, $E_1=E_2$. \emph{Destructive} interference occurs when the waves are 180 degrees out of phase, $E_1=-E_2$.\\
+\subsection{Slits}
+Plane waves through slits \emph{diffract}, creating spherical waves instead.\\
+Waves through 2 slits create \emph{fringes}. Bright/dark fringes occur from constructive/destructive interference.
+$$E=E_{\text{max}}\sin{(\frac{2\pi r}{\lambda}-\omega t)}$$
+\emph{Conditions for interference in double slit}:
+\begin{itemize}
+    \item Sources have the same wavelength
+    \item Sources maintain a constant phase
+\end{itemize}
+Path diff.: $\delta=r_2-r_2=d\sin\theta$.\\
+Bright fringe: $\delta=m\lambda$\\
+Dark fringe$\delta=(m+\frac{1}{2})\lambda$\\
+Position of fringes:\\
+$y_{\text{bright}}=L\frac{m\lambda}{d},y_{\text{dark}}=L\frac{(m+\frac{1}{2})\lambda}{d}$
+\subsection{Reflection,\\ Refraction}
+$$\theta_{\text{incidence}}=\theta_{\text{reflection}}$$
+Refraction wavelength: $\frac{v_2}{v_1}=\frac{\lambda_2}{\lambda_1}$\\
+Index of refraction: $n=\frac{c}{v}$\\
+Snell's law: $n_1\sin\theta_1=n_2\sin\theta_2$
+\emph{Total internal reflection} occurs when light travels from a medium with $n_1$ to a medium with $n_2<n_1$. If the angle of incidence $\theta>\sin^{-1}{\frac{n_2}{n_1}}$, then the beam is entirely reflected.
