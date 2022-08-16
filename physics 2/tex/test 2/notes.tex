@@ -1,0 +1,127 @@
+\section{Capacitors}
+Electric field inside capacitor:
+$$E=\frac{\eta}{\varepsilon_0}, \eta=\frac{Q}{A}\implies E=\frac{Q}{A\varepsilon_0}$$
+Potential difference across plates:
+$$V=Ed=\frac{Qd}{A\varepsilon_0}$$
+Work to charge plates:
+$$dW=-Vdq=-(\frac{qd}{A\varepsilon_0})dq$$
+$$W=-\int^Q_0\frac{qd}{A\varepsilon_0}dq=-\frac{Q^2d}{2A\varepsilon_0}$$
+Potential energy of capacitor:
+$$U=-W=\frac{Q^2d}{2A\varepsilon_0}$$
+$$U=\frac{\varepsilon_0}{2}E^2Ad=\frac{1}{2}CV^2$$
+Charge on plates from field and area:
+$$Q=EA\varepsilon_0$$
+Energy density of capacitor field:
+$$u_E=\frac{U}{V},V=Ad\implies u_e=\frac{\varepsilon_0}{2}E^2$$
+Capacitance, measured in \emph{Farads}:
+$$C=\frac{Q}{V}=\frac{A\varepsilon_0}{d}$$
+Capacitance depends only on area of plates and distance between them.\\\\
+Dielectric constants:
+$$\kappa=\frac{E_0}{E}$$
+Vacuums have a constant of 1. Filling a capacitor with dielectric of constant $\kappa$ increases capacitance by a factor of $\kappa$:
+$$C=\kappa C_0$$
+\section{Current}
+\subsection{Electron Motion}
+Electron motion in an electric field occurs due to the induced force from the field:
+$$F=qE$$
+Although electron collisions lead to random motion, electrons as a whole tend towards the (opposite) direction of the electric field. The average drift velocity is then:
+$$v_d=\frac{e\tau}{m}\vec{E}$$
+Where: $e$ is the charge of an electron, $\tau$ is the mean time between collisions, $m$ is the mass of the electron, and $\vec{E}$ is the electric field.
+Thus, \textbf{the presence of an electric field induced from a potential difference causes electron motion}.
+\subsection{Current}
+Current is average charge across an area over time, measured in \emph{Amperes}:
+$$I=\frac{\Delta Q}{\Delta t}, I=\frac{dq}{dt}$$
+Current can also be measured through electron density $n$:
+$$I=neAv_d$$
+Current conventionally flows from positive to negative.\\
+\emph{Current Density}:
+$$J=\frac{I}{A}$$
+In terms of electrons:
+$$J=\frac{ne^2\tau}{m}\vec{E}$$
+\section{Ohm's Law}
+Conductivity, measured in $(\text{Ohm}\cdot m)^{-1}$:
+$$\sigma=\frac{ne^2\tau}{m}$$
+Resistivity, measured in \emph{Ohm-meters}:
+$$\rho=\frac{1}{\sigma}$$
+Resistance only depends on material type and shape (L-length, A-area):
+$$R=\rho\frac{L}{A}$$
+Ohm's Law in microscopic form:
+$$J=\sigma E$$
+Ohm's Law in macroscopic form:
+$$V=IR$$
+\section{Electric Circuits}
+\subsection{Kirchhoff's Laws}
+\emph{Kirchhoff's Junction Law}: \\Current in = Current out
+$$\sum I_{\text{in}} = \sum I_{\text{out}}$$
+\emph{Kirchhoff's Loop Law}: For any path that starts and ends at the same point, the sum of voltages is 0
+$$\Delta V_{\text{loop}}=\sum(\Delta V)_i=0$$
+It follows from Kirchhoff's Loop Law that current through a resistor creates a drop in electric potential. For a battery-resistor circuit, with battery e.m.f. $\varepsilon$ and resistor resistance $\Omega$:
+$$\Delta V_{\text{battery}} + \Delta V_{\text{resistor}} = 0$$
+$$\varepsilon = -I\Omega$$
+\subsection{Voltage and Current}
+\begin{table}[H]
+    \scriptsize
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        & Series & Parallel\\
+        \hline
+        Current & Equal & Splits\\
+        \hline
+        Voltage & Splits & Equal\\
+        \hline
+    \end{tabular}
+\end{table}
+\subsection{Resistors}
+\emph{Resistors in \textbf{series}}
+$$R_{\total{total}} = R_1 + R_2 + ... = \sum R_i$$
+\textbf{Why?} Assume the resistors behave as a single resistor. The voltage drop across both resistors is:
+$$\Delta V_{R_1} + \Delta V_{R_2} = IR_1 + IR_2 = I(R_1 + R_2)$$
+\emph{Resistors in \textbf{parallel}}
+$$\frac{1}{R_{\total{total}}}=\frac{1}{R_1} + \frac{1}{R_2} + ...=\sum\frac{1}{R_i}$$
+$$R_{\text{total}}=\frac{1}{\frac{1}{R_1} + \frac{1}{R_2} + ...}=\frac{1}{\sum\frac{1}{R_i}}$$
+\textbf{Why?} Assume the resistors behave as a single resistor. Then the total current across both resistors is:
+$$I_{R_1} + I_{R_2} = \frac{V}{R_1}+\frac{V}{R_2}=V(\frac{1}{R_1}+\frac{1}{R_2})$$
+\subsection{Capacitors}
+\emph{Capacitance in \textbf{parallel}}
+$$C_{\total{total}} = C_1 + C_2 + ... = \sum C_i$$
+\emph{Capacitance in \textbf{series}}
+$$\frac{1}{C_{\total{total}}}=\frac{1}{C_1} + \frac{1}{C_2} + ...=\sum\frac{1}{C_i}$$
+$$C_{\text{total}}=\frac{1}{\frac{1}{C_1} + \frac{1}{C_2} + ...}=\frac{1}{\sum\frac{1}{C_i}}$$
+Charge across capacitors in series is equal
+\subsection{Power Dissipation}
+The following are the common ways to calculate power dissipated by a resistor:
+$$P=IV, P=RI^2, P=\frac{V^2}{R}$$
+\section{Magnetic Fields}
+\subsection{Right Hand Rules}
+Moving charges create magnetic fields. Since current is a collection of moving charges, it creates a magnetic field. Below are the 2 right hand rules. \\
+The left image yields the direction of a magnetic field (B) from a current(I)-carrying wire. \\
+The right image yields the direction of a magnetic force (F) from a magnetic field (B) on a moving charged particle with a velocity (V). \\
+The right image can also be used for electrons with your left hand.
+\begin{figure}[H]
+    \centering
+    \includesvg[scale=.2]{Test 2/images/righthand2.svg}
+    \includesvg[scale=.2]{Test 2/images/righthand1.svg}
+\end{figure}
+\subsection{Line Integrals}
+Assume we have a line integral $\int_\mathcal{C} \mathbf{B}\cdot \mathbf{ds}$\\
+i) $\mathbf{B}$ everywhere perpendicular to curve $\mathcal{C}$
+$$\int_\mathcal{C}\mathbf{B}\cdot\mathbf{ds} = 0$$
+ii) $\mathbf{B}$ everywhere tangent to curve $\mathcal{C}$
+$$\int_\mathcal{C}\mathbf{B}\cdot\mathbf{ds} = Bl$$
+Where $l$ is the length of curve $\mathcal{C}$
+\subsection{Ampere's Law}
+The line integral of $\mathbf{B}\cdot\mathbf{dl}$ around any closed loop (amperian surface) is $\mu_0 I_{\text{enclosed}}$:
+$$\oint \mathbf{B}\cdot\mathbf{dl}=\mu_0 I_{\text{enc}}$$
+Further, the flux of magnetic field through a surface is:
+$$\phi_B=\int_S\mathbf{B}\cdot\mathbf{dA}$$
+\subsection{Magnetic Force}
+For a charged particle of charge $q$ with velocity $\vec{v}$ inside magnetic field $\vec{B}$:
+$$F = q\vec{v}\times\vec{B}=|q|vB\sin\theta$$
+$$v=||\vec{v}||, B=||\vec{B}||$$
+$$\theta=\text{Angle between } \vec{v} \text{ and } \vec{B}$$
+Magnetic fields do \textbf{zero work} on moving charges, since force is perpendicular to the displacement of it's point of application.
+\subsection{Torque on Wire}
+$$\tau=I\vec{A}\times\vec{B}, \tau=IAB\sin\theta$$
+$$\tau_{\text{max}}=IAB$$
+Use the left hand rule to calculate resulting forces and resulting torque.
