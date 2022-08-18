@@ -1,0 +1,253 @@
+\documentclass[12pt]{article}
+
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[english]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{amsthm}
+
+\usepackage{mdframed}
+
+\usepackage{import}
+\usepackage{pdfpages}
+\usepackage{transparent}
+\usepackage{xcolor}
+
+\newcommand{\incfig}[2][1]{%
+    \def\svgwidth{#1\columnwidth}
+    \import{./figures/}{#2.pdf_tex}
+}
+
+\pdfsuppresswarningpagegroup=1
+
+\newmdtheoremenv{theo}{Theorem}
+\newtheorem*{remark}{Remark}
+
+\author{Maximo Fernandez}
+\title{PDEs and Functional Analysis\\ Lecture 1}
+\date{
+    2022-08-15
+}
+
+\begin{document}
+\maketitle
+\section{Overview}
+\label{sec:overview}
+\subsection{Outline}
+\label{sub:outline}
+This course will cover PDEs and Functional Analysis. In particular:
+\begin{enumerate}
+    \item PDEs
+    \begin{enumerate}
+        \item First Order PDEs (Linear and Nonlinear)
+        \item Second Order PDEs
+        \begin{enumerate}
+            \item Elliptic (Laplace's Equation)
+            \item Parabolic (Heat Equation)
+            \item Hyperbolic (Wave Equation)
+        \end{enumerate}
+    \end{enumerate}
+    \item Functional Analysis
+        \begin{enumerate}
+            \item Hilbert Spaces
+            \item Banach Spaces
+            \item Fourier Transforms
+        \end{enumerate}
+\end{enumerate}
+\subsection{Resources}
+\label{sub:resources}
+\textbf{Books}:
+\\
+\emph{Partial Differential Equations (Evans)}
+\\
+\emph{Functional Analysis and Partial Differential Equations (Brezis)}
+
+\pagebreak
+\section{First Order PDEs}
+\label{sec:first_order_pdes}
+\subsection{The Transport Equation}
+\label{sub:the_transport_equation}
+Let $b\in\mathbb{R}^{n}$ and consider
+\begin{equation}
+u_t+b\cdot \nabla u=0   
+\end{equation}
+Where:
+\begin{itemize}
+    \item $u:\mathbb{R}\times\mathbb{R}^{n}\to \mathbb{R}$
+    \item $u(t,x)\in\mathbb{R} \forall\, t\ge 0$
+    \item $\nabla =(\frac{\partial}{\partial x_1},...,\frac{\partial}{\partial x_n})$
+    \item $u_t=\frac{\partial }{\partial t}u$
+\end{itemize}
+Concretely, the equation becomes:
+\begin{equation}
+    \frac{\partial u}{\partial t}+\sum_{i=1}^n b_i\frac{\partial u}{\partial x_i}=0 
+\end{equation}
+Similarly, it can be written as:
+\begin{equation}
+    (u_t, \nabla u)\cdot(1,b)=0
+\end{equation}
+
+(1), (2) and (3) are equivalent, and are called \emph{Transport Equations} (of the first order). 
+The equations are clearly homogeneous and of constant coefficients. 
+To solve the transport equation, we are looking for a $u\in\mathcal{C}^{1}$ which satisfies the partial differential equation. 
+The equation is said to be free, and has no boundary condition.
+\\\\
+The standard way to proceed is to:
+\begin{enumerate}
+    \item Look for special solutions (explicit)
+    \item Review the existence of a solution in some class (the larger the class, the better)
+    \item Review uniqueness of a solution (the smaller the class, the better)
+    \item Review the regularity\footnote{Typically means high integrability or high differentiability, but generally serves as a measure of having desirable qualities} of a solution (typically the difficult point)
+\end{enumerate}
+In order to review the existence of a solution, functional analysis is typically employed. In particular, Sobolov spaces and distributions are of importance.\\\\
+Consider (1) once again. The equation is saying that the derivative along the $(1,b)$ vector is 0; $u$ has a directional derivative which is constant in time-space as follows:
+\begin{equation}
+    z(s)=u(t+s,x+sb)=u((t,x)+s(1,b)), s\in\mathbb{R}
+\end{equation}
+Taking it's derivative, we see $z$ is constant:
+\begin{gather*}
+    z'(s)=u_t((t,x)+s(1,b))+\nabla u((t,x)+s(1,b))=0
+\end{gather*}
+
+Let $\Sigma$ be the hyperplane $\{t=0\}\subset\mathbb{R}^{n+1}$, $\overline{u}\in\mathcal{C}^{1}(\Sigma)$, and $\pi$ be a projection map along the vector $(1,b)$. From these components we create the following system:
+\begin{equation}
+    \begin{cases}
+        u_t+b\cdot\nabla u=0 & (t,x)\in(0,\infty)\times\mathbb{R}^n\\
+        u\in\mathcal{C}^{1}([0,\infty)\times\mathbb{R}^{n})\\
+        u=\overline{u} & (t,x)\in\Sigma
+    \end{cases}
+\end{equation}
+Which is now an \emph{initial value problem} with a boundary condition.
+\begin{figure}[htbp]
+    \hspace{1.7cm}
+        \incfig{graphing-the-ivp}
+    \caption{Visualizing the IVP}
+    \label{fig:graphing-the-ivp}
+\end{figure}
+
+\begin{theo}
+    The solution to (5) is 
+\[
+    u(t,x)=\overline{u}(0,x-tb)
+\]
+\end{theo}
+
+\begin{proof}
+We assume there's a generic point $(t,x)$, for which we want to find a solution $u(t,x)$. From the diagram above, we can conclude that $u(t,x)=\overline{u}(0,\pi(t,x))$.
+\\\\
+Our goal is to find $\pi(t,x)\in\mathbb{R}^{n},s(t,x)\in\mathbb{R}$ such that $(t,x)=(0,\pi(t,x))+s(t,x)(1,b)$:
+\begin{gather*}
+    (t,x)=(s(t,x),\pi(t,x)+s(t,x)b)\\
+    t=s(t,x), x=\pi(t,x)+tb\\
+    \pi(t,x)=x-tb
+\end{gather*}
+So a solution to the initial value problem (5) is $u(t,x)=\overline{u}(0,x-tb)$.
+\end{proof}
+This can be checked by substituting $u$ into the initial value problem.
+\begin{remark}
+    $u\in\mathcal{C}^1$, the same smoothness as $\overline{u}$. However, there is no regularizing effect, the smoothness of the solution is equal to the smoothness of our $\overline{u}$. This follows necessarily as our solution to (5) is $u(t,x)=\overline{u}(0,x-tb)$.
+
+    The importance of this is that linear, first order PDEs will not regularize the equation. Some PDEs are "worse" in the sense that they will not regularize the initial condition. On the other hand, consider the heat equation (a second order PDE), it will regularize any initial non-smooth item, it will immediately become smooth.
+\end{remark}
+\begin{remark}
+    In the proof, there is an assumption that $(1, b)$ is transverse to $\Sigma$. That is, $(1,b)$ is not tangent to $\Sigma$.
+\end{remark}
+\begin{remark}
+    This is a linear transport equation in the sense that we transport the initial condition, we are "moving" the value of $\overline{u}$ to different points.
+\end{remark}
+\begin{remark}
+    If $\overline{u}$ is non-smooth, e.g. $\overline{u}$ discontinuous with constant values, is it reasonable that $\overline{u}(0,x-tb)$ solves (5) in some weak sense? Later it will possibly be shown why. 
+\end{remark}
+\begin{remark}
+    The lines parallel to $(1,b)$ solve the following system:
+    \[
+        \begin{cases}
+            X'(s)=(1,b)\in\mathbb{R}^{1+n}\\
+            X(0)=(0,\overline{x})
+        \end{cases}
+    \]
+    Called the System of Characteristics Where $X=(X_0,X_1,...,X_n)$, and $X_0(s)=s, (X_1,...,X_n)(s)=\overline{x}+sb$.
+\begin{figure}[htbp]
+    \hspace{1.6cm}
+        \incfig{new-system}
+    \caption{Visualizing the System of Characteristics}
+    \label{fig:new-system}
+\end{figure}
+\end{remark}
+\subsection{Nonhomogeneous Transport Equation}
+\label{sub:linear_non_homogeneous_equations}
+Consider\footnote{One could also consider $f\in\mathcal{C}^0([0,\infty)\times\mathbb{R}^n)$} $f\in\mathcal{C}^1([0,\infty)\times\mathbb{R}^{n})$ and the initial value problem:
+\begin{equation}
+    \begin{cases} 
+        u_t+b\cdot\nabla u=f & (t,x)\in(0,\infty)\times\mathbb{R}^{n}\\
+        u\in\mathcal{C}^{1}([0,\infty)\times\mathbb{R}^{n}\\
+        u=\overline{u} & (t,x)\in\Sigma=\{0\}\times\mathbb{R}^{n}
+    \end{cases}
+\end{equation}
+This is a linear, first order PDE with constant coefficients, but nonhomogeneous. 
+\begin{theo}
+    The solution to the nonhomogeneous case of the transport equation, (6), is 
+\[
+    u(t,x)=\overline{u}(0,x-tb)+\int_{0}^{t} f(s,x+(s-t)b)\: ds 
+\]
+\end{theo}
+We can introduce the same $z(s)=u(t+s, x+sb), t\ge 0, x\in\mathbb{R}^n$. Differentiating:
+\[
+    z'(s)=u_t(t+s,x+sb)+b\cdot\nabla u(t+s,x+sb)
+\] 
+This implies that $z'(s)=f(t+s,x+sb)$. We can integrate this equation from $-t$to 0:
+\begin{gather*}
+    \int_{-t}^{0} z'(s)\: ds=\int_{-t}^{0} f(t+s,x+sb)\: ds\\
+    z(0)-z(t)=u(t,x)-u(0,x-tb)=\int_{-t}^{0} f(t+s,x+sb)\: ds\\
+    u(t,x)=\overline{u}(0,x-tb)+\int_{-t}^{0} f(t+s,x+sb)\: ds
+\end{gather*}
+We make the variable change $t+s=\sigma$:
+\[
+    u(t,x)=\overline{u}(0,x-tb)+\int_{0}^{t} f(\sigma,x+(\sigma-t)b)\: d\sigma 
+\]
+And arrive at the solution ($s=\sigma$):
+\begin{equation}
+    u(t,x)=\overline{u}(0,x-tb)+\int_{0}^{t} f(s,x+(s-t)b)\: ds 
+\end{equation}
+Note that when $f=0$, which represents the homogeneous transport equation, this still holds.
+\begin{remark}
+    Consider the system from before:
+    \[
+        \begin{cases}
+            X'(s)=(1,b)\in\mathbb{R}^{1+n}\\
+            X(0)=(0,\overline{x})
+        \end{cases}
+    \]
+    And the new system:
+    \begin{equation}
+        \begin{cases}
+        y'=f(X)\\
+        y(0)=\overline{u}(0,\overline{x})
+        \end{cases}
+    \end{equation}
+    We can define $X$ more implicitly by $X=X(s,\overline{x})$, and we can introduce $y(s)=u(X(s,\overline{x}))$, which solves the second system:
+   \[
+        y(0)=u(X(0,\overline{x}))=u(0,\overline{x})=\overline{u}(0,\overline{x}) 
+   \]      
+        since $u=\overline{u}\,\forall(t,x)\in\Sigma$, and
+        \[
+            y'=u_t(s,\overline{x}+sb)+b\cdot\nabla u(s,\overline{x}+sb)=f(s,\overline{x}+sb)=f(X(s,\overline{x}))
+        \] 
+        as claimed. So, for any $u$ which solves (5), we can solve for $X$, define $y$, a solution to (8). 
+        The importance of this remark is to rework the solution to find $u$. 
+        From $X$ and $y$, we can attempt to define $u(t,x)$:
+        \begin{equation}
+            u(t,x)=y(s(t,x), \overline{x}(t,x))
+        \end{equation}
+    We can confirm this definition solves (6). Recall that $s(t,x)=t$ and that \overline{x}(t,x)=x-tb$, and we can show:
+    \begin{gather*}
+        y(s(t,x),\overline{x}(t,x))=\overline{u}(\overline{x}(t,x))+\int_{0}^{s(t,x)} f(X(\sigma))\: d\sigma\\
+        \int_{0}^{s(t,x)} f(X(\sigma))\: d\sigma=\int_{0}^{s(t,x)} f(\sigma,\overline{x}(t,x)+\sigma b)\: d\sigma\\
+        y=\overline{u}(x-tb)+\int_{0}^{t} f(\sigma,x+(\sigma-t)b)\: d\sigma
+    \end{gather*}
+So, one can construct a solution to (6) by constructing the system of characteristics, constructing (8), and solving (9). The solution to the PDE comes about from solving a system of ODEs. This is the \textbf{method of characteristics}.
+\end{remark}
+\end{document}
