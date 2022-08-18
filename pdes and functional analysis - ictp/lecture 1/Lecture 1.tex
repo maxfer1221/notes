@@ -24,12 +24,13 @@
 \pdfsuppresswarningpagegroup=1
 
 \newmdtheoremenv{theo}{Theorem}
+\newmdtheoremenv{lemm}{Lemma}
 \newtheorem*{remark}{Remark}
 
 \author{Maximo Fernandez}
 \title{PDEs and Functional Analysis\\ Lecture 1}
 \date{
-    2022-08-15
+    2022-08-15 - 2022-08-18
 }
 
 \begin{document}
@@ -213,41 +214,52 @@ And arrive at the solution ($s=\sigma$):
     u(t,x)=\overline{u}(0,x-tb)+\int_{0}^{t} f(s,x+(s-t)b)\: ds 
 \end{equation}
 Note that when $f=0$, which represents the homogeneous transport equation, this still holds.
-\begin{remark}
-    Consider the system from before:
+Consider the system of characteristics from before:
+\[
+    \begin{cases}
+        X'(s)=(1,b)\in\mathbb{R}^{1+n}\\
+        X(0)=(0,\overline{x})
+    \end{cases}
+\]
+And consider the new system:
+\begin{equation}
+    \begin{cases}
+    y'=f(X)\\
+    y(0)=\overline{u}(0,\overline{x})
+    \end{cases}
+\end{equation}
+We can define $X$ more implicitly by $X=X(s,\overline{x})$, and we can introduce $y(s)=u(X(s,\overline{x}))$.
+\begin{lemm}
+    $y(x)=u(X(s,\overline{x}))$ satisfies the system (8)
+\end{lemm}
+\begin{proof}
+    It suffices to show that $y(0)=\overline{u}(0,\overline{x})$ and $y'=f(X(s,\overline{x}))$:
     \[
-        \begin{cases}
-            X'(s)=(1,b)\in\mathbb{R}^{1+n}\\
-            X(0)=(0,\overline{x})
-        \end{cases}
-    \]
-    And the new system:
+        y(0)=u(X(0,\overline{x}))=u(0,\overline{x})=\overline{u}(0,\overline{x})
+    \]      
+    since $u=\overline{u}\,\forall(t,x)\in\Sigma$, and
+    \[
+        y'=u_t(s,\overline{x}+sb)+b\cdot\nabla u(s,\overline{x}+sb)=f(s,\overline{x}+sb)=f(X(s,\overline{x}))
+    \] 
+\end{proof}
+    For any $u$ which solves (5), we can solve for $X$, and we can define $y$, a solution to (8). 
+    The importance of this remark is to rework $y$ to find $u$. 
+    From $X$ and $y$, we can attempt to define $u(t,x)$:
     \begin{equation}
-        \begin{cases}
-        y'=f(X)\\
-        y(0)=\overline{u}(0,\overline{x})
-        \end{cases}
+        u(t,x)=y(s(t,x), \overline{x}(t,x))
     \end{equation}
-    We can define $X$ more implicitly by $X=X(s,\overline{x})$, and we can introduce $y(s)=u(X(s,\overline{x}))$, which solves the second system:
-   \[
-        y(0)=u(X(0,\overline{x}))=u(0,\overline{x})=\overline{u}(0,\overline{x}) 
-   \]      
-        since $u=\overline{u}\,\forall(t,x)\in\Sigma$, and
-        \[
-            y'=u_t(s,\overline{x}+sb)+b\cdot\nabla u(s,\overline{x}+sb)=f(s,\overline{x}+sb)=f(X(s,\overline{x}))
-        \] 
-        as claimed. So, for any $u$ which solves (5), we can solve for $X$, define $y$, a solution to (8). 
-        The importance of this remark is to rework the solution to find $u$. 
-        From $X$ and $y$, we can attempt to define $u(t,x)$:
-        \begin{equation}
-            u(t,x)=y(s(t,x), \overline{x}(t,x))
-        \end{equation}
-    We can confirm this definition solves (6). Recall that $s(t,x)=t$ and that \overline{x}(t,x)=x-tb$, and we can show:
-    \begin{gather*}
-        y(s(t,x),\overline{x}(t,x))=\overline{u}(\overline{x}(t,x))+\int_{0}^{s(t,x)} f(X(\sigma))\: d\sigma\\
-        \int_{0}^{s(t,x)} f(X(\sigma))\: d\sigma=\int_{0}^{s(t,x)} f(\sigma,\overline{x}(t,x)+\sigma b)\: d\sigma\\
-        y=\overline{u}(x-tb)+\int_{0}^{t} f(\sigma,x+(\sigma-t)b)\: d\sigma
-    \end{gather*}
-So, one can construct a solution to (6) by constructing the system of characteristics, constructing (8), and solving (9). The solution to the PDE comes about from solving a system of ODEs. This is the \textbf{method of characteristics}.
-\end{remark}
+\begin{lemm}
+    (9) is a solution to (6)
+\end{lemm}
+\begin{proof}
+Recall that $s(t,x)=t$ and that \overline{x}(t,x)=x-tb$.
+\begin{gather*}
+    y(s(t,x),\overline{x}(t,x))=\overline{u}(\overline{x}(t,x))+\int_{0}^{s(t,x)} f(X(\sigma))\: d\sigma\\
+    \int_{0}^{s(t,x)} f(X(\sigma))\: d\sigma=\int_{0}^{s(t,x)} f(\sigma,\overline{x}(t,x)+\sigma b)\: d\sigma\\
+    y=\overline{u}(x-tb)+\int_{0}^{t} f(\sigma,x+(\sigma-t)b)\: d\sigma
+\end{gather*}
+\end{proof}
+We have shown one can construct a solution to (6) by constructing the system of characteristics, constructing (8), and solving (9). 
+The solution to the PDE comes about from solving a system of ODEs. This is the \emph{method of characteristics}.
+\end{proof}
 \end{document}
